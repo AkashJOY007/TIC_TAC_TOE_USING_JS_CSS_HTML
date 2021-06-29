@@ -1,0 +1,152 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  background-color:#e8cc8b;
+}
+h1{
+    /* position: absolute; */
+    /* display: flex; */
+    color: #4c6986;
+    font-size: 75px;
+    font-weight: bold;
+    border-color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.left{
+    flex-grow: 1;
+}
+body{
+  font-family:"Merriweathee Sans", sans-serif;
+  color:blue;
+}
+.wrapper{
+  max-width:1440px;
+  height:800px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto;
+}
+.restart{
+  background-color:pink;
+  width:175px;
+  height:50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50px;
+  border:2px solid black;
+  transition:all 0.2s ease;
+  margin-top:30x;
+}
+.restart:hover{
+  background:#4c6986;
+  color:white;
+}
+.game{
+  width:500px;
+  height:500px;
+}
+.header{
+  display:flex;
+  color:#9A9A9A;
+  font-size:24px;
+  
+}
+.header .player-x{
+  flex:1;
+  border-bottom: 3px solid #eeeeee;
+  padding:20px;
+}
+.player-x.active{
+    color:purple;
+    border-color:purple;
+}
+
+.header .player-o{
+  flex:1;
+  border-bottom: 3px solid #eeeeee;
+  padding:20px;
+}
+.player-o.active{
+    color:#42BED7;
+    border-color: #42BED7;
+}
+.board{
+    height: 500px;
+    width: 100%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+    grid-gap:0px;
+    flex-grow:1;
+    padding:10px;
+}
+.board-tile{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:80px;
+  background-color:white;
+}
+.board-tile:hover{
+    background-color: pink;
+    cursor: pointer;
+}
+.board-tile:not(:nth-child(3n)) {
+  border-right:2px solid black;
+}
+.board-tile:not(:nth-last-child(-n+3)){
+  border-bottom:2px solid black;
+}
+.tile-o{
+    color:#42BED7;
+    background-color: white;
+}
+.tile-o:hover{
+    color:#42BED7;
+    background-color: pink;
+}
+.tile-x{
+    color:purple;
+    background-color:white;
+}
+.tile-x:hover{
+    color:purple;
+    background-color:pink;
+}
+.tile-winner span{
+    color:green;
+    transition: all 0.2s ease;
+}
+@media only screen and (max-width:800px){
+    .wrapper{
+        flex-direction: column;
+    }
+    .left{
+        margin-bottom: 50px;
+    }
+    .right{
+        margin-bottom: 150px;
+    }
+    .intro{
+      margin-top: 124px;
+    }
+}
+.winneranounce{
+    height: 100px;
+    width: 300px;
+    color:black;
+    font-size:25px;
+    margin:auto;
+}
+@media only screen and (max-width:800px)
+{
+    .winneranounce{
+        margin-left:220px;
+        text-align: center;
+        margin-top: 150px;;
+
+    }
+}
